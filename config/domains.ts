@@ -1,12 +1,12 @@
 import "dotenv/config";
-import { ConnectionOptions } from "typeorm";
+import { MysqlConnectionOptions } from "typeorm/driver/mysql/MysqlConnectionOptions";
 
-export const domainsConnection: ConnectionOptions = {
-    name: process.env.c1_name,
-    type: "mysql",
-    host: process.env.c1_host ?? "localhost",
-    port: parseInt(process.env.c1_port) ?? 3306,
-    username: process.env.c1_username,
-    password: process.env.c1_password,
-    database: process.env.c1_database,
+export const domainsConnection: MysqlConnectionOptions = {
+    name: process.env.C1_NAME,
+    type: process.env.C1_TYPE,
+    host: process.env.C1_HOST,
+    port: process.env.C1_PORT,
+    username: process.env.C1_USERNAME,
+    password: process.env.C1_PASSWORD,
+    database: process.env.C1_DATABASE,
 };

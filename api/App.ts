@@ -18,6 +18,7 @@ export class App {
         await this.connect();
         this.addErrorListeners();
         this.listen();
+        console.log("App successfully started!");
         return this;
     }
 
