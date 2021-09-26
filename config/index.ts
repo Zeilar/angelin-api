@@ -1,2 +1,2 @@
 export * from "./ConnectionsManager";
-export * from "./domains";
+export * from "./connections";

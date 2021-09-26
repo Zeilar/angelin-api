@@ -15,10 +15,11 @@ export class App {
     ) {}
 
     public async start() {
+        console.log("\x1b[33m", "Starting application...");
         await this.connect();
         this.addErrorListeners();
         this.listen();
-        console.log("App successfully started!");
+        console.log("\x1b[32m", "App successfully started");
         return this;
     }
 
@@ -30,20 +31,21 @@ export class App {
     }
 
     private addErrorListeners() {
-        console.log("Setting up error listeners...");
+        console.log("\x1b[33m", "Setting up error listeners...");
         process.on("uncaughtException", (error) => {
             logger.error(error);
         });
         process.on("unhandledRejection", (error: Error) => {
             logger.error(error);
         });
+        console.log("\x1b[32m", "Set up error listeners");
         return this;
     }
 
     private async connect() {
-        console.log("Connecting to databases...");
+        console.log("\x1b[33m", "Connecting to databases...");
         await createConnections(this.conManager.connections);
-        console.log("Connected to databases");
+        console.log("\x1b[32m", "Connected to databases");
         return this;
     }
 }
