@@ -16,7 +16,7 @@ export class Logger {
 
         function loggingError(error: NodeJS.ErrnoException | null) {
             if (error) {
-                console.error(`Failed creating log: ${error}`);
+                ConsoleLogger.red(`Failed creating log: ${error}`);
             }
         }
 
