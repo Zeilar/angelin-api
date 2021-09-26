@@ -11,7 +11,7 @@ const logger = new Logger();
 export class App {
     constructor(
         public readonly server: Express,
-        public readonly connections: ConnectionOptions[]
+        private readonly connections: ConnectionOptions[]
     ) {}
 
     public async start() {
