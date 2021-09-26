@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "esModuleInterop": true,
+        "noImplicitReturns": true,
+        "noImplicitAny": true,
+        "outDir": "build",
+        "declaration": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "ES2017",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    }
+}
