@@ -7,10 +7,12 @@ export class Logger {
     public log(folder: string, message: string) {
         ConsoleLogger.red(message); // TODO: remove in production
 
-        const today = dayjs().format("YYYY-MM-DD"),
+        const now = new Date();
+
+        const today = dayjs(now).format("YYYY-MM-DD"),
             folderPath = join(__dirname, `../${folder}`),
             filePath = join(folderPath, `${today}.txt`),
-            content = `${new Date()}\n${message}`;
+            content = `${now}\n${message}`;
 
         function loggingError(error: NodeJS.ErrnoException | null) {
             if (error) {
