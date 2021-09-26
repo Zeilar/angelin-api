@@ -1,10 +1,11 @@
 import { join } from "path";
 import fs from "fs";
 import dayjs from "dayjs";
+import { ConsoleLogger } from "./";
 
 export class Logger {
     public log(folder: string, message: string) {
-        console.log(message); // TODO: remove in production
+        ConsoleLogger.red(message); // TODO: remove in production
 
         const today = dayjs().format("YYYY-MM-DD"),
             folderPath = join(__dirname, `../${folder}`),
