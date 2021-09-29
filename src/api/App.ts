@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { Express } from "express";
 import { ConnectionOptions, createConnections } from "typeorm";
-import { Logger, ConsoleLogger } from "../utils";
+import { Logger, ConsoleLogger } from "../../utils";
 import { connections } from "../config";
 
 const { PORT } = process.env;

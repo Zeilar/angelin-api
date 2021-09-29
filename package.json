@@ -1,8 +1,8 @@
 {
     "scripts": {
         "start": "npm run start:dev",
-        "start:dev": "dotenv -e .env -- nodemon --transpile-only -P tsconfig.json api/bootstrap.ts",
-        "start:prod": "dotenv -e .env.production -- nodemon build/api/bootstrap.js"
+        "start:dev": "dotenv -e .env -- nodemon --transpile-only -P tsconfig.json src/api/boot.ts",
+        "start:prod": "dotenv -e .env.production -- nodemon build/api/boot.js"
     },
     "devDependencies": {
         "@types/dotenv": "^8.2.0",

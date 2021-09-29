@@ -1,7 +1,7 @@
 import { join } from "path";
 import fs from "fs";
 import dayjs from "dayjs";
-import { ConsoleLogger } from "./";
+import { ConsoleLogger } from ".";
 
 export class Logger {
     public log(folder: string, message: string) {
