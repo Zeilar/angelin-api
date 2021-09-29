@@ -1,0 +1,25 @@
+version: "4.0.1"
+services:
+    server:
+        build: .
+        ports:
+            - 5000:5000
+        volumes:
+            - ./src:/app/src
+        environment:
+            - DB_NAME=${DB_NAME}
+            - DB_TYPE=${DB_TYPE}
+            - DB_HOST=${DB_HOST}
+            - DB_PORT=${DB_PORT}
+            - DB_USERNAME=${DB_USERNAME}
+            - DB_PASSWORD=${DB_PASSWORD}
+            - DB_DATABASE=${DB_DATABASE}
+    mysql:
+        image: mysql
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: true
+            MYSQL_DATABASE: ${DB_DATABASE}
+        ports:
+            - 3306:3306
+        volumes:
+            - ./volumes/mysql:/var/lib/mysql

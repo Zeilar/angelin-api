@@ -1,8 +1,7 @@
 import "dotenv/config";
 import { Express } from "express";
-import { ConnectionOptions, createConnections } from "typeorm";
-import { Logger, ConsoleLogger } from "../../utils";
-import { connections } from "../config";
+import { ConnectionOptions, createConnection } from "typeorm";
+import { Logger, ConsoleLogger } from "../utils";
 
 const { PORT } = process.env;
 
@@ -11,7 +10,7 @@ const logger = new Logger();
 export class App {
     constructor(
         public readonly server: Express,
-        private readonly connections: ConnectionOptions[]
+        private readonly connection: ConnectionOptions
     ) {}
 
     public async start() {
@@ -44,7 +43,7 @@ export class App {
 
     private async connect() {
         ConsoleLogger.yellow("Connecting to databases...");
-        await createConnections(connections);
+        await createConnection(this.connection);
         ConsoleLogger.green("Connected to databases");
         return this;
     }

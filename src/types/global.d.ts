@@ -5,13 +5,13 @@ import { MysqlConnectionOptions } from "typeorm/driver/mysql/MysqlConnectionOpti
 declare global {
     namespace NodeJS {
         interface ProcessEnv {
-            C1_NAME: MysqlConnectionOptions["name"];
-            C1_TYPE: MysqlConnectionOptions["type"];
-            C1_HOST: MysqlConnectionOptions["host"];
-            C1_PORT: MysqlConnectionOptions["port"];
-            C1_USERNAME: MysqlConnectionOptions["username"];
-            C1_PASSWORD: MysqlConnectionOptions["password"];
-            C1_DATABASE: MysqlConnectionOptions["database"];
+            DB_NAME: MysqlConnectionOptions["name"];
+            DB_TYPE: MysqlConnectionOptions["type"];
+            DB_HOST: MysqlConnectionOptions["host"];
+            DB_PORT: MysqlConnectionOptions["port"];
+            DB_USERNAME: MysqlConnectionOptions["username"];
+            DB_PASSWORD: MysqlConnectionOptions["password"];
+            DB_DATABASE: MysqlConnectionOptions["database"];
         }
     }
 }

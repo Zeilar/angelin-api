@@ -1,4 +1,5 @@
 {
+    "main": "src/api/boot.ts",
     "scripts": {
         "start": "npm run start:dev",
         "start:dev": "dotenv -e .env -- nodemon --transpile-only -P tsconfig.json src/api/boot.ts",
