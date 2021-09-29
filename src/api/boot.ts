@@ -1,11 +1,10 @@
 import { App } from "./";
 import express from "express";
-import { connection } from "../config";
 
 const server = express();
 
 function bootstrap() {
-    const app = new App(server, connection);
+    const app = new App(server);
     app.start();
     return app;
 }

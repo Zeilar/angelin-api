@@ -1,6 +1,7 @@
 node_modules
 .env
 .env.production
+ormconfig.json
 /errors
 /warnings
 /volumes

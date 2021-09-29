@@ -1,1 +1,1 @@
-angelin-api
+Don't forget ormconfig.json
