@@ -9,4 +9,8 @@ function bootstrap() {
     return app;
 }
 
+server.post("/test", (req, res) => {
+    res.send("Hello world");
+});
+
 export const app = bootstrap();
