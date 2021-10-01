@@ -40,19 +40,6 @@ export class App {
 
     private async connect() {
         ConsoleLogger.yellow("Connecting to database...");
-        console.log(
-            "connection",
-            await getConnectionOptions(process.env.NODE_ENV)
-        );
-        // await createConnection({
-        //     type: "mysql",
-        //     host: "mysql",
-        //     port: 3306,
-        //     password: "123",
-        //     username: "root",
-        //     database: "angelin-api",
-        //     name: "development",
-        // });
         await createConnection(
             await getConnectionOptions(process.env.NODE_ENV)
         );
