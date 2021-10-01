@@ -2,6 +2,8 @@ version: "4.0.1"
 services:
     server:
         build: .
+        depends_on:
+            - mysql
         ports:
             - 5000:5000
         volumes:
@@ -12,6 +14,7 @@ services:
     mysql:
         image: mysql
         command: --default-authentication-plugin=mysql_native_password
+        restart: always
         environment:
             MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
             MYSQL_DATABASE: ${DATABASE_NAME}
