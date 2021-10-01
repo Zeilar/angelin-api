@@ -1,0 +1,11 @@
+[
+    {
+        "name": "development",
+        "type": "mysql",
+        "host": "localhost",
+        "post": 3306,
+        "username": "root",
+        "password": "password",
+        "database": "myDatabase"
+    }
+]
