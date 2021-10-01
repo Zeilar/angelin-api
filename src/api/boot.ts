@@ -9,7 +9,7 @@ function bootstrap() {
     return app;
 }
 
-server.post("/test", (req, res) => {
+server.get("/test", (req, res) => {
     res.send("Hello world");
 });
 
