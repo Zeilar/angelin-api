@@ -1,5 +1,7 @@
 FROM node:14.17.2
 
+RUN apt-get update
+
 RUN mkdir -p /app
 
 WORKDIR /app
