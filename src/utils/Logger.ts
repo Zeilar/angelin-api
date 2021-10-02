@@ -12,7 +12,7 @@ export class Logger {
         const now = new Date();
 
         const today = dayjs(now).format("YYYY-MM-DD"),
-            folderPath = join(__dirname, `../${folder}`),
+            folderPath = join(__dirname, `../../${folder}`),
             filePath = join(folderPath, `${today}.txt`),
             content = `${now}\n${message}`;
 

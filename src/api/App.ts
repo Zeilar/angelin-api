@@ -5,7 +5,7 @@ import { join } from "path";
 import { createConnection, getConnectionOptions } from "typeorm";
 import { Logger, ConsoleLogger } from "../utils";
 import { InversifyExpressServer } from "inversify-express-utils";
-import * as Repositories from "../repositories";
+import * as Repositories from "../db/repositories";
 
 import "../api/controllers";
 
@@ -71,9 +71,15 @@ export class App {
 
     private async connect() {
         ConsoleLogger.yellow("Connecting to database...");
+        const dbPath = join(__dirname, "../db");
         await createConnection({
             ...(await getConnectionOptions(process.env.NODE_ENV)),
-            entities: [join(__dirname, "../db/entities/*.ts")],
+            entities: [`${dbPath}/entities/*.ts`],
+            migrations: [`${dbPath}/migrations/*.ts`],
+            name: "default",
+            cli: {
+                migrationsDir: `${dbPath}/migrations/*.ts`,
+            },
         });
         ConsoleLogger.green("Connected to database");
         return this;
