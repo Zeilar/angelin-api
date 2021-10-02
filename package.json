@@ -2,8 +2,8 @@
     "main": "src/api/boot.ts",
     "scripts": {
         "start": "npm run start:dev",
-        "start:dev": "dotenv -e .env -- nodemon --transpile-only",
-        "start:prod": "dotenv -e .env.production -- nodemon build/api/boot.js"
+        "start:dev": "nodemon --transpile-only",
+        "start:prod": "node build/api/boot.js"
     },
     "devDependencies": {
         "@types/express": "^4.17.13",

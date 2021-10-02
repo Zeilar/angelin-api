@@ -2,7 +2,9 @@ import { join } from "path";
 import fs from "fs";
 import dayjs from "dayjs";
 import { ConsoleLogger } from ".";
+import { injectable } from "inversify";
 
+@injectable()
 export class Logger {
     public log(folder: string, message: string) {
         ConsoleLogger.red(message); // TODO: remove in production
