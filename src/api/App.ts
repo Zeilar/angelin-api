@@ -1,5 +1,6 @@
 import "dotenv/config";
-import { Express } from "express";
+import express from "express";
+import { join } from "path";
 import { createConnection, getConnectionOptions } from "typeorm";
 import { Logger, ConsoleLogger } from "../utils";
 
@@ -8,7 +9,7 @@ const { PORT } = process.env;
 const logger = new Logger();
 
 export class App {
-    constructor(public readonly server: Express) {}
+    public readonly server = express();
 
     public async start() {
         ConsoleLogger.yellow("Starting application...");
@@ -40,9 +41,10 @@ export class App {
 
     private async connect() {
         ConsoleLogger.yellow("Connecting to database...");
-        await createConnection(
-            await getConnectionOptions(process.env.NODE_ENV)
-        );
+        await createConnection({
+            ...(await getConnectionOptions(process.env.NODE_ENV)),
+            entities: [join(__dirname, "../db/entities/*.ts")],
+        });
         ConsoleLogger.green("Connected to database");
         return this;
     }

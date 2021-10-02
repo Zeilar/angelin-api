@@ -1,0 +1,5 @@
+Fri Oct 01 2021 17:43:19 GMT+0000 (Coordinated Universal Time)
+TypeError: Cannot read property 'listen' of undefined
+    at App.listen (/app/src/api/App.ts:23:21)
+    at App.start (/app/src/api/App.ts:17:14)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)

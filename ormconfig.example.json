@@ -1,9 +1,9 @@
 {
     "name": "development",
-    "type": "mysql",
-    "host": "localhost",
-    "port": 3306,
-    "username": "root",
-    "password": "password",
-    "database": "myDatabase"
+    "type": "postgres",
+    "host": "postgres",
+    "port": 5432,
+    "username": "postgres",
+    "password": "123",
+    "database": "my_db"
 }
