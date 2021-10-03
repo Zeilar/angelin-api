@@ -3,9 +3,9 @@ import { Application } from "express";
 import { Container } from "inversify";
 import { join } from "path";
 import { createConnection, getConnectionOptions } from "typeorm";
-import { Logger, ConsoleLogger } from "../utils";
+import { Logger, ConsoleLogger } from "@utils/index";
 import { InversifyExpressServer } from "inversify-express-utils";
-import * as Repositories from "../db/repositories";
+import * as Repositories from "@db/repositories";
 
 import "../api/controllers";
 
@@ -73,12 +73,11 @@ export class App {
         ConsoleLogger.yellow("Connecting to database...");
         const dbPath = join(__dirname, "../db");
         await createConnection({
-            ...(await getConnectionOptions(process.env.NODE_ENV)),
+            ...(await getConnectionOptions("default")),
             entities: [`${dbPath}/entities/*.ts`],
             migrations: [`${dbPath}/migrations/*.ts`],
-            name: "default",
             cli: {
-                migrationsDir: `${dbPath}/migrations/*.ts`,
+                migrationsDir: "src/db/migrations",
             },
         });
         ConsoleLogger.green("Connected to database");

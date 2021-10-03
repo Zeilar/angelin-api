@@ -47,8 +47,18 @@ export class ConsoleLogger {
         return this;
     }
 
+    public static greenBg(message: string) {
+        console.log(this.colors.bgGreen, message);
+        return this;
+    }
+
     public static red(message: string) {
         console.log(this.colors.fgRed, message);
+        return this;
+    }
+
+    public static redBg(message: string) {
+        console.log(this.colors.bgRed, message);
         return this;
     }
 }

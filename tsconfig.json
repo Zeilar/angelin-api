@@ -12,6 +12,15 @@
         "target": "ES2017",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "strictPropertyInitialization": false
+        "strictPropertyInitialization": false,
+        "baseUrl": "src",
+        "paths": {
+            "@utils/*": ["utils/*"],
+            "@db/*": ["db/*"],
+            "@config/*": ["config/*"],
+            "@services/*": ["services/*"],
+            "@api/*": ["api/*"],
+            "@views/*": ["views/*"]
+        }
     }
 }

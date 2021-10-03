@@ -1,7 +1,7 @@
 import { join } from "path";
 import fs from "fs";
 import dayjs from "dayjs";
-import { ConsoleLogger } from ".";
+import { ConsoleLogger } from "@utils/index";
 import { injectable } from "inversify";
 
 @injectable()
@@ -11,10 +11,10 @@ export class Logger {
 
         const now = new Date();
 
-        const today = dayjs(now).format("YYYY-MM-DD"),
-            folderPath = join(__dirname, `../../${folder}`),
-            filePath = join(folderPath, `${today}.txt`),
-            content = `${now}\n${message}`;
+        const today = dayjs(now).format("YYYY-MM-DD");
+        const folderPath = join(__dirname, `../../${folder}`);
+        const filePath = join(folderPath, `${today}.txt`);
+        const content = `${now}\n${message}`;
 
         function loggingError(error: NodeJS.ErrnoException | null) {
             if (error) {
