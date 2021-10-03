@@ -1,5 +1,5 @@
 {
-    "main": "src/api/boot.ts",
+    "main": "src/app/boot.ts",
     "scripts": {
         "start": "npm run start:dev",
         "start:dev": "nodemon -r tsconfig-paths/register --transpile-only",

@@ -20,7 +20,8 @@
             "@config/*": ["config/*"],
             "@services/*": ["services/*"],
             "@api/*": ["api/*"],
-            "@views/*": ["views/*"]
+            "@views/*": ["views/*"],
+            "@app/*": ["app/*"]
         }
     }
 }
