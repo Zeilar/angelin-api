@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
 import { getRepository } from "typeorm";
-import { Domain } from "../entities/Domain";
+import { Domain } from "@db/entities/Domain";
 
 @injectable()
 export class DomainRepository {
