@@ -31,9 +31,7 @@ export class Logger {
                 loggingError(error)
             );
         } else {
-            fs.writeFile(filePath, `${content}`, (error) =>
-                loggingError(error)
-            );
+            fs.writeFile(filePath, content, (error) => loggingError(error));
         }
     }
 
