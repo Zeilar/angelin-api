@@ -13,7 +13,7 @@ const { PORT } = process.env;
 
 export class App {
     public server: Application;
-    private container: Container;
+    public container: Container;
 
     public async start() {
         ConsoleLogger.yellow("Starting application...");
@@ -30,7 +30,7 @@ export class App {
         ConsoleLogger.yellow("Building app...");
         this.server = new InversifyExpressServer(this.container)
             .setConfig(serverConfig)
-            .setErrorConfig(errorConfig)
+            .setErrorConfig((server) => errorConfig(server, this))
             .build();
         ConsoleLogger.green("Built app");
         return this;
