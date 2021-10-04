@@ -1,3 +1,6 @@
+import { injectable } from "inversify";
+
+@injectable()
 export class ConsoleLogger {
     public static readonly colors = {
         reset: "\x1b[0m",

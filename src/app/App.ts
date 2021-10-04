@@ -67,6 +67,7 @@ export class App {
 
         // Misc
         this.container.bind(Logger).toSelf();
+        this.container.bind(ConsoleLogger).toSelf();
 
         ConsoleLogger.green("Installed dependencies");
         return this;
