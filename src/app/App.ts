@@ -3,7 +3,7 @@ import { Application } from "express";
 import { Container } from "inversify";
 import { join } from "path";
 import { createConnection, getConnectionOptions } from "typeorm";
-import { Logger, ConsoleLogger } from "@utils/logs";
+import { Logger, ConsoleLogger } from "@utils/index";
 import { InversifyExpressServer } from "inversify-express-utils";
 import * as Repositories from "@db/repositories";
 import { serverConfig, errorConfig } from "@config/index";
@@ -29,7 +29,7 @@ export class App {
     private build() {
         ConsoleLogger.yellow("Building app...");
         this.server = new InversifyExpressServer(this.container)
-            .setConfig(serverConfig)
+            .setConfig((server) => serverConfig(server, this))
             .setErrorConfig((server) => errorConfig(server, this))
             .build();
         ConsoleLogger.green("Built app");
