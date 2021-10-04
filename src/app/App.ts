@@ -6,6 +6,7 @@ import { createConnection, getConnectionOptions } from "typeorm";
 import { Logger, ConsoleLogger } from "@utils/logs";
 import { InversifyExpressServer } from "inversify-express-utils";
 import * as Repositories from "@db/repositories";
+import { serverConfig, errorConfig } from "@config/index";
 import "@api/controllers";
 
 const { PORT } = process.env;
@@ -27,7 +28,10 @@ export class App {
 
     private build() {
         ConsoleLogger.yellow("Building app...");
-        this.server = new InversifyExpressServer(this.container).build();
+        this.server = new InversifyExpressServer(this.container)
+            .setConfig(serverConfig)
+            .setErrorConfig(errorConfig)
+            .build();
         ConsoleLogger.green("Built app");
         return this;
     }
