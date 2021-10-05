@@ -3,10 +3,10 @@ import { Application } from "express";
 import { Container } from "inversify";
 import { join } from "path";
 import { createConnection, getConnectionOptions } from "typeorm";
-import { Logger, ConsoleLogger } from "@utils/index";
+import { Logger, ConsoleLogger } from "@utils";
 import { InversifyExpressServer } from "inversify-express-utils";
 import * as Repositories from "@db/repositories";
-import { serverConfig, errorConfig } from "@config/index";
+import { serverConfig, errorConfig } from "@config";
 import "@api/controllers";
 
 const { PORT } = process.env;

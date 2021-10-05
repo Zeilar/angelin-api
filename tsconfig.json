@@ -16,12 +16,25 @@
         "baseUrl": "src",
         "paths": {
             "@utils/*": ["utils/*"],
+            "@utils": ["utils"],
+
             "@db/*": ["db/*"],
+            "@db": ["db"],
+
             "@config/*": ["config/*"],
+            "@config": ["config"],
+
             "@services/*": ["services/*"],
+            "@services": ["services"],
+
             "@api/*": ["api/*"],
+            "@api": ["api"],
+
             "@views/*": ["views/*"],
-            "@app/*": ["app/*"]
+            "@views": ["views"],
+
+            "@app/*": ["app/*"],
+            "@app": ["app"]
         }
     }
 }

@@ -1,4 +1,4 @@
-import { App } from "@app/index";
+import { App } from "@app";
 
 function bootstrap() {
     const app = new App();
