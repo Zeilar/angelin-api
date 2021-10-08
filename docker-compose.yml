@@ -2,8 +2,6 @@ version: "3.7"
 services:
     server:
         build: .
-        depends_on:
-            - postgres
         ports:
             - ${PORT}:${PORT}
         volumes:
@@ -15,16 +13,14 @@ services:
         image: postgres
         restart: always
         environment:
-            POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
-            POSTGRES_DB: ${DATABASE_NAME}
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
+            POSTGRES_DB: ${DB_NAME}
         ports:
             - 5432:5432
         volumes:
             - postgres:/var/lib/postgres
     adminer:
         image: adminer
-        depends_on:
-            - postgres
         restart: always
         ports:
             - 8080:8080

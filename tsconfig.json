@@ -1,5 +1,5 @@
 {
-    "include": ["src"],
+    "include": ["src", "knexfile.ts"],
     "compilerOptions": {
         "strict": true,
         "esModuleInterop": true,

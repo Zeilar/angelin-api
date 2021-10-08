@@ -6,10 +6,10 @@ WORKDIR /app
 
 COPY /package.json /app
 COPY /tsconfig.json /app
-COPY /ormconfig.json /app
+COPY /knexfile.ts /app
 
 RUN npm i
-RUN npm i -g nodemon ts-node
+RUN npm i -g nodemon ts-node knex
 
 COPY /src /app/src
 

@@ -1,8 +1,6 @@
 import "dotenv/config";
 import { Application } from "express";
 import { Container } from "inversify";
-import { join } from "path";
-import { createConnection, getConnectionOptions } from "typeorm";
 import { Logger, ConsoleLogger } from "@utils";
 import { InversifyExpressServer } from "inversify-express-utils";
 import * as Repositories from "@db/repositories";
@@ -75,16 +73,8 @@ export class App {
 
     private async connect() {
         ConsoleLogger.yellow("Connecting to database...");
-        const dbPath = join(__dirname, "../db");
-        await createConnection({
-            ...(await getConnectionOptions("default")),
-            entities: [`${dbPath}/entities/*.ts`],
-            migrations: [`${dbPath}/migrations/*.ts`],
-            cli: {
-                migrationsDir: "src/db/migrations",
-            },
-        });
-        ConsoleLogger.green("Connected to database");
+        ConsoleLogger.yellow("Connected to database");
+
         return this;
     }
 }

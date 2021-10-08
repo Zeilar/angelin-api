@@ -5,3 +5,4 @@ ormconfig.json
 /errors
 /warnings
 /lib
+/build
