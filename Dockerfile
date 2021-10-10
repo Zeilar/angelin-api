@@ -7,10 +7,9 @@ WORKDIR /app
 COPY /package.json /app
 COPY /tsconfig.json /app
 COPY /knexfile.ts /app
+COPY /src /app/src
 
 RUN npm i
 RUN npm i -g nodemon ts-node knex
-
-COPY /src /app/src
 
 CMD npm start
