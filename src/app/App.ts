@@ -4,10 +4,11 @@ import { Logger, ConsoleLogger } from "@utils";
 import { InversifyExpressServer } from "inversify-express-utils";
 import * as Repositories from "@db/repositories";
 import { serverConfig, errorConfig } from "@config";
-import "@api/controllers";
 import knex from "knex";
 import { Model } from "objection";
 import { connection } from "@config/connection";
+import { join } from "path";
+import "@api/controllers";
 
 const { PORT } = process.env;
 
@@ -21,6 +22,7 @@ export class App {
         this.installDependencies();
         this.installErrorListeners();
         this.build();
+        this.installViewEngine();
         this.listen();
         ConsoleLogger.green("App successfully started");
         return this;
@@ -40,6 +42,14 @@ export class App {
         this.server.listen(PORT, () =>
             ConsoleLogger.green(`Listening on port ${PORT}`)
         );
+        return this;
+    }
+
+    private installViewEngine() {
+        ConsoleLogger.yellow("Installing EJS...");
+        this.server.set("view engine", "ejs");
+        this.server.set("views", join(__dirname, "../views"));
+        ConsoleLogger.green("Installed EJS");
         return this;
     }
 
