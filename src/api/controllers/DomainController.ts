@@ -6,7 +6,7 @@ export class DomainController {
     constructor(public readonly domainRepo: DomainRepository) {}
 
     @inversify.httpGet("/")
-    public async getAll() {
-        return await this.domainRepo.getAll();
+    public getAll() {
+        return this.domainRepo.getAll();
     }
 }

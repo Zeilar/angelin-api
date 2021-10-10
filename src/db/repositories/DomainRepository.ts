@@ -3,7 +3,8 @@ import { Domain } from "@db/models/Domain";
 
 @injectable()
 export class DomainRepository {
-    public async getAll() {
-        return await Domain.query();
+    public getAll() {
+        console.log(Domain.query());
+        return Domain.query();
     }
 }
