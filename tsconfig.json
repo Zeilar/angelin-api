@@ -1,11 +1,11 @@
 {
-    "include": ["src", "knexfile.ts"],
+    "include": ["src"],
     "compilerOptions": {
         "strict": true,
         "esModuleInterop": true,
         "noImplicitReturns": true,
         "noImplicitAny": true,
-        "outDir": "dist",
+        "outDir": "dist/src",
         "declaration": true,
         "module": "commonjs",
         "moduleResolution": "node",
@@ -16,26 +16,26 @@
         "strictPropertyInitialization": false,
         "baseUrl": "src",
         "paths": {
-            "@utils/*": ["utils/*"],
             "@utils": ["utils"],
+            "@utils/*": ["utils/*"],
 
-            "@db/*": ["db/*"],
             "@db": ["db"],
+            "@db/*": ["db/*"],
 
-            "@config/*": ["config/*"],
             "@config": ["config"],
+            "@config/*": ["config/*"],
 
-            "@services/*": ["services/*"],
             "@services": ["services"],
+            "@services/*": ["services/*"],
 
-            "@api/*": ["api/*"],
             "@api": ["api"],
+            "@api/*": ["api/*"],
 
-            "@views/*": ["views/*"],
             "@views": ["views"],
+            "@views/*": ["views/*"],
 
-            "@app/*": ["app/*"],
-            "@app": ["app"]
+            "@app": ["app"],
+            "@app/*": ["app/*"]
         }
     }
 }
