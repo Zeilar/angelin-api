@@ -6,3 +6,4 @@ ormconfig.json
 /warnings
 /lib
 /build
+/dist
