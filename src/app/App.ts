@@ -6,6 +6,9 @@ import { InversifyExpressServer } from "inversify-express-utils";
 import * as Repositories from "@db/repositories";
 import { serverConfig, errorConfig } from "@config";
 import "@api/controllers";
+import knex from "knex";
+import { Model } from "objection";
+import { connection } from "@config/connection";
 
 const { PORT } = process.env;
 
@@ -15,7 +18,7 @@ export class App {
 
     public async start() {
         ConsoleLogger.yellow("Starting application...");
-        await this.connect();
+        await this.connectToDatabase();
         this.installDependencies();
         this.installErrorListeners();
         this.build();
@@ -71,10 +74,10 @@ export class App {
         return this;
     }
 
-    private async connect() {
+    private async connectToDatabase() {
         ConsoleLogger.yellow("Connecting to database...");
+        Model.knex(knex(connection));
         ConsoleLogger.yellow("Connected to database");
-
         return this;
     }
 }
