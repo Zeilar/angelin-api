@@ -12,6 +12,7 @@ declare global {
             DB_USER: ConnectionTypes.DB_USER;
             DB_PASSWORD: ConnectionTypes.DB_PASSWORD;
             DB_NAME: ConnectionTypes.DB_NAME;
+            DB_URL: ConnectionTypes.DB_URL;
         }
     }
 }

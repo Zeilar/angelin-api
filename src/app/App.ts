@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { Application } from "express";
 import { Container } from "inversify";
 import { Logger, ConsoleLogger } from "@utils";
@@ -77,7 +76,7 @@ export class App {
     private async connectToDatabase() {
         ConsoleLogger.yellow("Connecting to database...");
         Model.knex(knex(connection));
-        ConsoleLogger.yellow("Connected to database");
+        ConsoleLogger.green("Connected to database");
         return this;
     }
 }

@@ -1,25 +1,11 @@
-import {
-    Entity,
-    PrimaryGeneratedColumn,
-    Column,
-    CreateDateColumn,
-    UpdateDateColumn,
-} from "typeorm";
+import { Model } from "objection";
 
-@Entity()
-export class Domain {
-    @PrimaryGeneratedColumn("uuid")
+export class Domain extends Model {
+    public static tableName = "domains";
+
     public id: string;
-
-    @Column("text")
     public name: string;
-
-    @Column("text")
     public url: string;
-
-    @CreateDateColumn()
     public created_at: string;
-
-    @UpdateDateColumn()
     public updated_at: string;
 }

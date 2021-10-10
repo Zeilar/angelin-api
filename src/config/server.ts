@@ -21,8 +21,10 @@ export function serverConfig(server: Application, app: App) {
 }
 
 export function errorConfig(server: Application, app: App) {
-    server.use((error: Error, req: Request, res: Response) => {
-        app.container.get(Logger).error(error);
-        res.status(500).json({ error: "Something went wrong." });
+    server.use((req: Request, res: Response) => {
+        if (res.statusCode >= 400) {
+            app.container.get(Logger).error(new Error("Something went wrong."));
+            res.status(500).json({ error: "Something went wrong." });
+        }
     });
 }
