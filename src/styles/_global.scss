@@ -1,3 +1,8 @@
 body {
     font-family: $font-family-default;
 }
+
+::selection {
+    color: $color-accent;
+    background-color: rgba(0, 0, 0, 0.15);
+}

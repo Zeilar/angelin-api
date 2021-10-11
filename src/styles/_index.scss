@@ -1,4 +1,9 @@
 .index {
     background-color: $color-body;
+    display: flex;
+    flex-direction: column;
     color: $color-text;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
