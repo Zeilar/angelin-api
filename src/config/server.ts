@@ -1,8 +1,9 @@
-import { Application, Request, Response } from "express";
+import express, { Application, Request, Response } from "express";
 import { json, urlencoded } from "body-parser";
 import rateLimit from "express-rate-limit";
 import { DateHelpers, Logger } from "@utils";
 import { App } from "@app";
+import { join } from "path";
 
 export function serverConfig(server: Application, app: App) {
     server.use(
@@ -18,6 +19,8 @@ export function serverConfig(server: Application, app: App) {
             },
         })
     );
+    console.log(join(__dirname, "../../public"));
+    server.use(express.static(join(__dirname, "../../public")));
 }
 
 export function errorConfig(server: Application, app: App) {
