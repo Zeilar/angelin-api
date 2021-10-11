@@ -19,7 +19,6 @@ export function serverConfig(server: Application, app: App) {
             },
         })
     );
-    console.log(join(__dirname, "../../public"));
     server.use(express.static(join(__dirname, "../../public")));
 }
 

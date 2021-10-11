@@ -3,7 +3,7 @@
     "compilerOptions": {
         "strict": true,
         "esModuleInterop": true,
-        "noImplicitReturns": true,
+        "noImplicitReturns": false,
         "noImplicitAny": true,
         "outDir": "dist/src",
         "declaration": true,
