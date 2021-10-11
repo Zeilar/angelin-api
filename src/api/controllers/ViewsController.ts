@@ -13,8 +13,8 @@ export class ViewsControllers extends inversify.BaseHttpController {
         @inversify.response() res: Response,
         @inversify.request() req: Request
     ) {
-        const domains = await this.domainRepo.getAll();
         if (req.headers.accept?.includes("application/json")) {
+            const domains = await this.domainRepo.getAll();
             return this.json({ data: { domains } });
         }
         res.render("index");
