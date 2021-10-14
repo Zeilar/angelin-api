@@ -7,6 +7,7 @@ export class DomainService {
     constructor(public readonly domainRepo: DomainRepository) {}
 
     public create(data: ICreateDomain) {
+        // TODO: validate
         return this.domainRepo.create(data);
     }
 }
