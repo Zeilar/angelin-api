@@ -1,5 +1,3 @@
-export {};
-
 import * as ConnectionTypes from "./connection";
 
 declare global {
@@ -16,3 +14,5 @@ declare global {
         }
     }
 }
+
+export type ID = string | number;

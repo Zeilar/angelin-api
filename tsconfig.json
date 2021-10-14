@@ -35,7 +35,10 @@
             "@views/*": ["views/*"],
 
             "@app": ["app"],
-            "@app/*": ["app/*"]
+            "@app/*": ["app/*"],
+
+            "@_types": ["types"],
+            "@_types/*": ["types/*"]
         }
     }
 }
