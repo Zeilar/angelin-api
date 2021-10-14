@@ -3,6 +3,7 @@ import { Container } from "inversify";
 import { Logger, ConsoleLogger } from "@utils";
 import { InversifyExpressServer } from "inversify-express-utils";
 import * as Repositories from "@db/repositories";
+import * as Services from "@services";
 import { serverConfig, errorConfig } from "@config";
 import knex from "knex";
 import { Model } from "objection";
@@ -74,6 +75,7 @@ export class App {
         this.container.bind(Repositories.DomainRepository).toSelf();
 
         // Services
+        this.container.bind(Services.DomainService).toSelf();
 
         // Misc
         this.container.bind(Logger).toSelf();
