@@ -1,5 +1,6 @@
 import * as inversify from "inversify-express-utils";
 import { UserService } from "@/services";
+import { ICreateUser } from "@/types/models";
 
 @inversify.controller("/users")
 export class DomainController extends inversify.BaseHttpController {
@@ -8,7 +9,7 @@ export class DomainController extends inversify.BaseHttpController {
     }
 
     @inversify.httpPost("/")
-    public register() {
-        return this.userService.register();
+    public register(@inversify.requestBody() body: ICreateUser) {
+        return this.userService.register(body);
     }
 }
