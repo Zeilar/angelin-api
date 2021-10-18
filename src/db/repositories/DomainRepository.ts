@@ -1,7 +1,7 @@
 import { injectable } from "inversify";
 import { Domain } from "@/db/models";
-import { ID } from "@/_types/global";
-import { ICreateDomain, IEditDomain } from "@/_types/models";
+import { ID } from "@/types/global";
+import { ICreateDomain, IEditDomain } from "@/types/models";
 import { QueryBuilder } from "objection";
 
 @injectable()
@@ -16,10 +16,7 @@ export class DomainRepository {
 
     public edit(domain: Domain): QueryBuilder<Domain, Domain>;
     public edit(domain: ID, data: IEditDomain): QueryBuilder<Domain, Domain>;
-    public edit(
-        domain: Domain | ID,
-        data?: IEditDomain
-    ): QueryBuilder<Domain, Domain> {
+    public edit(domain: Domain | ID, data?: IEditDomain) {
         if (domain instanceof Domain) {
             return domain.$query().updateAndFetch(domain);
         }
