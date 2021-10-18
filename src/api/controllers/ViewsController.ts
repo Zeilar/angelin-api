@@ -1,7 +1,7 @@
 import * as inversify from "inversify-express-utils";
 import { Request, Response } from "express";
-import { DomainRepository } from "@db/repositories";
-import { expectsJSON } from "@api/middlewares";
+import { DomainRepository } from "@/db/repositories";
+import { expectsJSON } from "@/api/middlewares";
 
 @inversify.controller("/")
 export class ViewsControllers extends inversify.BaseHttpController {

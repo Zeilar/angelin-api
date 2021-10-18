@@ -1,5 +1,5 @@
 import * as inversify from "inversify-express-utils";
-import { DomainRepository } from "@db/repositories";
+import { DomainRepository } from "@/db/repositories";
 
 @inversify.controller("/domains")
 export class DomainController extends inversify.BaseHttpController {

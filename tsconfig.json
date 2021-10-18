@@ -16,29 +16,7 @@
         "strictPropertyInitialization": false,
         "baseUrl": "src",
         "paths": {
-            "@utils": ["utils"],
-            "@utils/*": ["utils/*"],
-
-            "@db": ["db"],
-            "@db/*": ["db/*"],
-
-            "@config": ["config"],
-            "@config/*": ["config/*"],
-
-            "@services": ["services"],
-            "@services/*": ["services/*"],
-
-            "@api": ["api"],
-            "@api/*": ["api/*"],
-
-            "@views": ["views"],
-            "@views/*": ["views/*"],
-
-            "@app": ["app"],
-            "@app/*": ["app/*"],
-
-            "@_types": ["types"],
-            "@_types/*": ["types/*"]
+            "@/*": ["*"]
         }
     }
 }

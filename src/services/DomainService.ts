@@ -1,5 +1,5 @@
-import { DomainRepository } from "@db/repositories";
-import { ICreateDomain } from "@_types/models";
+import { DomainRepository } from "@/db/repositories";
+import { ICreateDomain } from "@/_types/models";
 import { injectable } from "inversify";
 
 @injectable()

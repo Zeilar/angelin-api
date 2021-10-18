@@ -1,8 +1,8 @@
 import express, { Application, Request, Response } from "express";
 import { json, urlencoded } from "body-parser";
 import rateLimit from "express-rate-limit";
-import { DateHelpers, Logger } from "@utils";
-import { App } from "@app";
+import { DateHelpers, Logger } from "@/utils";
+import { App } from "@/app";
 import { join } from "path";
 
 export function serverConfig(server: Application, app: App) {

@@ -1,15 +1,15 @@
 import { Application } from "express";
 import { Container } from "inversify";
-import { Logger, ConsoleLogger } from "@utils";
+import { Logger, ConsoleLogger } from "@/utils";
 import { InversifyExpressServer } from "inversify-express-utils";
-import * as Repositories from "@db/repositories";
-import * as Services from "@services";
-import { serverConfig, errorConfig } from "@config";
+import * as Repositories from "@/db/repositories";
+import * as Services from "@/services";
+import { serverConfig, errorConfig } from "@/config";
 import knex from "knex";
 import { Model } from "objection";
-import { connection } from "@config/connection";
+import { connection } from "@/config/connection";
 import { join } from "path";
-import "@api/controllers";
+import "@/controllers";
 
 const { PORT } = process.env;
 

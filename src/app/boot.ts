@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import "dotenv/config";
-import { App } from "@app";
+import { App } from "@/app";
 
 function bootstrap() {
     const app = new App();

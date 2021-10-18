@@ -1,7 +1,7 @@
 import { injectable } from "inversify";
-import { Domain } from "@db/models";
-import { ID } from "@_types/global";
-import { ICreateDomain, IEditDomain } from "@_types/models";
+import { Domain } from "@/db/models";
+import { ID } from "@/_types/global";
+import { ICreateDomain, IEditDomain } from "@/_types/models";
 import { QueryBuilder } from "objection";
 
 @injectable()

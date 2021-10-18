@@ -1,7 +1,7 @@
 import { join } from "path";
 import fs from "fs";
 import dayjs from "dayjs";
-import { ConsoleLogger } from "@utils";
+import { ConsoleLogger } from "@/utils";
 import { injectable } from "inversify";
 
 @injectable()
